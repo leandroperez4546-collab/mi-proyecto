@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="row justify-content-center mt-4">
+    <div class="col-md-5 col-lg-4">
+        <div class="card p-4 shadow-sm border-0">
+            <h2 class="h4 fw-bold text-center mb-2">Crear cuenta gratuita</h2>
+            <p class="text-muted text-center small mb-4">Únete a la comunidad SeeCars.ve para guardar tus búsquedas.</p>
+
+            <div class="d-grid gap-2 mb-3">
+                <button class="btn btn-outline-dark py-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" width="18" class="me-2">
+                    Registrarse con Google
+                </button>
+            </div>
+
+            <div class="position-relative my-4">
+                <hr>
+                <span class="position-absolute top-50 start-50 translate-middle bg-white px-3 text-muted small">o regístrate con tu email</span>
+            </div>
+
+            <form method="POST">
+                <div class="mb-3">
+                    <label class="form-label small fw-bold">Nombre de usuario</label>
+                    <input type="text" name="username" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label small fw-bold">Correo electrónico</label>
+                    <input type="email" name="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label small fw-bold">Contraseña</label>
+                    <input type="password" name="password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-blue w-100 py-3 fw-bold">Crear cuenta</button>
+            </form>
+            
+            <p class="text-center small text-muted mt-3">
+                Al registrarte, confirmas que eres humano y aceptas nuestros términos de seguridad.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

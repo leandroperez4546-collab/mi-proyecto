@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-white rounded-3 shadow-sm border-start border-primary border-5">
+    <div class="container-fluid py-2 text-center">
+        <h1 class="display-5 fw-bold text-blue">Bienvenidos a SeeCars</h1>
+        <p class="fs-4 text-muted italic">"Tu página de compra y venta de coches seguros"</p>
+        <a href="/buscar" class="btn btn-blue btn-lg mt-3">🔍 Buscar Vehículos</a>
+    </div>
+</div>
+
+<div class="row">
+    <h4 class="mb-4 text-blue fw-bold">Publicaciones Destacadas</h4>
+    {% for v in vehiculos %}
+    <div class="col-md-3 mb-4">
+        <div class="card h-100" onclick="location.href='/editar/{{ v.id }}'" style="cursor: pointer;">
+            <div class="bg-primary text-white d-flex align-items-center justify-content-center" style="height: 180px; font-size: 50px;">🚙</div>
+            <div class="card-body">
+                <h3 class="text-blue fw-bold mb-0">${{ v.precio }}</h3>
+                <p class="mb-1 fw-bold text-uppercase">{{ v.marca }} {{ v.modelo }}</p>
+                <small class="text-muted">Año: {{ v.año }}</small>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="text-center p-5 w-100">
+        <p class="text-muted">Aún no hay coches en SeeCars.ve. ¡Publica el tuyo!</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

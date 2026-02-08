@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5 col-lg-4">
+        <div class="card p-4 shadow-sm border-0 bg-white">
+            <h2 class="h4 fw-bold text-center mb-4">Iniciar sesión</h2>
+            
+            <div class="d-grid gap-2 mb-4">
+                <button class="btn btn-outline-dark d-flex align-items-center justify-content-center py-2 shadow-sm">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" width="20" class="me-2">
+                    Continuar con Google
+                </button>
+                <button class="btn btn-primary d-flex align-items-center justify-content-center py-2 shadow-sm" style="background-color: #1877F2; border: none;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" width="20" class="me-2">
+                    Continuar con Facebook
+                </button>
+            </div>
+
+            <div class="d-flex align-items-center mb-4">
+                <hr class="flex-grow-1">
+                <span class="mx-2 text-muted small">o usa tu correo</span>
+                <hr class="flex-grow-1">
+            </div>
+
+            <form method="POST">
+                <div class="mb-3">
+                    <label class="form-label small fw-bold">Correo electrónico</label>
+                    <input type="email" name="email" class="form-control form-control-lg border-2" placeholder="nombre@ejemplo.com" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label small fw-bold">Contraseña</label>
+                    <input type="password" name="password" class="form-control form-control-lg border-2" required>
+                </div>
+                <button type="submit" class="btn btn-blue w-100 py-3 fw-bold mt-2">Ingresar</button>
+            </form>
+            
+            <p class="small text-center mt-4">
+                ¿No tienes cuenta? <a href="/signup" class="text-primary text-decoration-none fw-bold">Regístrate en SeeCars.ve</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

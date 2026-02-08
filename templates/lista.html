@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-dark">📋 Inventario de Vehículos Registrados</h2>
+        <a href="/registro" class="btn btn-success shadow-sm">+ Nuevo Registro</a>
+    </div>
+
+    <div class="card shadow-sm border-0">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-dark text-center">
+                    <tr>
+                        <th>Vendedor</th>
+                        <th>Cédula / Teléfono</th>
+                        <th>Vehículo</th>
+                        <th>Año / Precio</th>
+                        <th>Foto</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    {% for v in vehiculos %}
+                    <tr>
+                        <td class="fw-bold">{{ v.nombre }}<br><small class="text-muted">{{ v.correo }}</small></td>
+                        <td>{{ v.cedula }}<br>{{ v.telefono }}</td>
+                        <td><span class="badge bg-primary">{{ v.marca }}</span><br>{{ v.modelo }}</td>
+                        <td><span class="badge bg-info text-dark">{{ v.año }}</span></td>
+                        <td>
+                            <div class="badge bg-secondary text-wrap" style="width: 6rem;">
+                                {{ v.foto }}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a href="/editar/{{ v.id }}" class="btn btn-warning btn-sm">
+                                    ✏️ Modificar
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    {% if not vehiculos %}
+    <div class="alert alert-warning mt-4 text-center" role="alert">
+        <strong>¡Atención!</strong> No hay vehículos registrados en el sistema actualmente.
+    </div>
+    {% endif %}
+    
+    <div class="mt-4">
+        <a href="/" class="btn btn-outline-secondary">⬅️ Volver al Menú Principal</a>
+    </div>
+</div>
+{% endblock %}

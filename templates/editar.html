@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6 card p-4 shadow-sm">
+        <h3 class="fw-bold mb-4">Editar publicación</h3>
+        <form method="POST">
+            <div class="mb-3">
+                <label class="small fw-bold">Modelo</label>
+                <input type="text" name="modelo" class="form-control" value="{{ v.modelo }}" required>
+            </div>
+            <div class="mb-3">
+                <label class="small fw-bold">Precio ($)</label>
+                <input type="number" name="precio" class="form-control" value="{{ v.precio }}" required>
+            </div>
+            <button type="submit" class="btn btn-warning w-100 fw-bold">Guardar cambios</button>
+            <a href="/" class="btn btn-link w-100 text-center mt-2">Cancelar</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
